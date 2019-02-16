@@ -1,24 +1,36 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
+using TripTracker.Logic;
 
 namespace TripTracker
 {
-    public class Program
+    class Program
     {
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
-            CreateWebHostBuilder(args).Build().Run();
-        }
+            while (true)
+            {
+                var parms = Console.ReadLine();
 
-        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>();
+                var result = Command.Parse(parms);
+
+
+                //if (parms != null && (parms.Length != 2 || parms.Length != 5))
+                //{
+                //    Console.WriteLine("Please enter one of the following commands.");
+                //    Console.WriteLine("Driver");
+                //    Console.WriteLine("Usage: Driver <name>");
+                //    Console.WriteLine("Example: Driver Dan");
+                //    Console.WriteLine("Trip");
+                //    Console.WriteLine("Usage: Trip <name> <start> <end> <distance>");
+                //    Console.WriteLine("Example: Trip Dan 07:15 07:45 17.3");
+                //    Console.WriteLine();
+                //    Console.WriteLine();
+                //    continue;
+                //}
+
+
+                break;
+            }
+        }
     }
 }
