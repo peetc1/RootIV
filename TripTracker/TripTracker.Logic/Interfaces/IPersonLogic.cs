@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TripTracker.Logic.BusinessObjects
+namespace TripTracker.Logic.Interfaces
 {
-    public class CommandType
+    public interface IPersonLogic
     {
-
     }
 }

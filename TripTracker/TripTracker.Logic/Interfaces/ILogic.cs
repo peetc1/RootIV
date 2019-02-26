@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TripTracker.Logic.Interfaces
 {
-    public interface ILogic<T>
+    public interface ILogic<in T>
     {
         void Add(T obj);
 
