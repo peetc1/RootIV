@@ -4,7 +4,9 @@ using System.Text;
 
 namespace TripTracker.Logic.Interfaces
 {
-    public interface ICommandParser
+    public interface ICommandResponse
     {
+        bool Success { get; set; }
+        string Message { get; set; }
     }
 }

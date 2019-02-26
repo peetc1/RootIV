@@ -1,7 +1,7 @@
-﻿using System;
+﻿using System.Linq;
 using TripTracker.Logic;
 
-namespace TripTracker
+namespace TripTracker.Console
 {
     class Program
     {
@@ -9,25 +9,24 @@ namespace TripTracker
         {
             while (true)
             {
-                var parms = Console.ReadLine();
+                if (args == null || !args.Any() || args.Length != 1)
+                {
+                    System.Console.WriteLine("No valid parameters supplied. Press Enter to exit");
+                    System.Console.ReadLine();
+                    break;
+                }
 
-                var result = Command.Parse(parms);
-
-
-                //if (parms != null && (parms.Length != 2 || parms.Length != 5))
-                //{
-                //    Console.WriteLine("Please enter one of the following commands.");
-                //    Console.WriteLine("Driver");
-                //    Console.WriteLine("Usage: Driver <name>");
-                //    Console.WriteLine("Example: Driver Dan");
-                //    Console.WriteLine("Trip");
-                //    Console.WriteLine("Usage: Trip <name> <start> <end> <distance>");
-                //    Console.WriteLine("Example: Trip Dan 07:15 07:45 17.3");
-                //    Console.WriteLine();
-                //    Console.WriteLine();
-                //    continue;
-                //}
-
+                var result = FileParser.Parse(args[0]);
+                System.Console.WriteLine($"File read {(result.Success ? "successfully" : "failed")}");
+                System.Console.WriteLine(result.Message);
+                if (result.Success)
+                {
+                    foreach (var line in result.Lines)
+                    {
+                        System.Console.WriteLine(line);
+                    }
+                }
+                System.Console.ReadLine();
 
                 break;
             }

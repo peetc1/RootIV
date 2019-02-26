@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TripTracker", "TripTracker\TripTracker.csproj", "{56B89D78-A73F-4D2B-9828-876605E45A8A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TripTracker.Console", "TripTracker\TripTracker.Console.csproj", "{56B89D78-A73F-4D2B-9828-876605E45A8A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TripTracker.Logic", "TripTracker.Logic\TripTracker.Logic.csproj", "{3F1E329D-7405-4CAA-8EB0-5BB2C9C687A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TripTracker.Logic", "TripTracker.Logic\TripTracker.Logic.csproj", "{3F1E329D-7405-4CAA-8EB0-5BB2C9C687A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TripTracker.Data", "TripTracker.Data\TripTracker.Data.csproj", "{2B46EC94-92E5-452F-9977-AF5682409490}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TripTracker.Data", "TripTracker.Data\TripTracker.Data.csproj", "{2B46EC94-92E5-452F-9977-AF5682409490}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TripTracker.Logic.Tests", "TripTracker.Logic.Tests\TripTracker.Logic.Tests.csproj", "{58827E6D-70C3-48F6-A5BE-6263A08E91EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TripTracker.Logic.Tests", "TripTracker.Logic.Tests\TripTracker.Logic.Tests.csproj", "{58827E6D-70C3-48F6-A5BE-6263A08E91EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

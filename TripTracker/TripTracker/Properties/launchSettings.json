@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "TripTracker.Console": {
+      "commandName": "Project",
+      "commandLineArgs": "$(ProjectDir)/Test.txt"
+    }
+  }
+}
