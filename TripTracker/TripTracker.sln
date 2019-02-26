@@ -11,6 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TripTracker.Data", "TripTra
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TripTracker.Logic.Tests", "TripTracker.Logic.Tests\TripTracker.Logic.Tests.csproj", "{58827E6D-70C3-48F6-A5BE-6263A08E91EF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A3A1CA6D-1420-4533-9DE8-AD7B2C09D67B}"
+	ProjectSection(SolutionItems) = preProject
+		TripTracker\Test.txt = TripTracker\Test.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
