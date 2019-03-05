@@ -91,6 +91,12 @@ namespace TripTracker.Logic
             return drivers;
         }
 
+        public void ClearData()
+        {
+            _driverLogic.DeleteAll();
+            _tripLogic.DeleteAll();
+        }
+
         
     }
 }

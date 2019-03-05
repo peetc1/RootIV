@@ -4,5 +4,6 @@
     {
         void Save(T obj);
         T Get(string name);
+        void DeleteAll();
     }
 }

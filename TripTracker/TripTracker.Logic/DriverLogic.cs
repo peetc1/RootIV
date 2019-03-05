@@ -10,7 +10,7 @@ namespace TripTracker.Logic
     public class DriverLogic : IDriverLogic
     {
         // theorertical database using repository pattern
-        private List<Driver> Drivers { get; }
+        private List<Driver> Drivers { get; set; }
 
         public DriverLogic()
         {
@@ -33,6 +33,11 @@ namespace TripTracker.Logic
         public Driver Get(string name)
         {
             return Drivers.FirstOrDefault(d => d.Name == name);
+        }
+
+        public void DeleteAll()
+        {
+            Drivers = new List<Driver>();
         }
 
         public IEnumerable<Driver> GetAll()

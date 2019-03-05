@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using TripTracker.Logic.BusinessObjects;
 using TripTracker.Logic.Interfaces;
 
@@ -26,6 +24,11 @@ namespace TripTracker.Logic
         public Trip Get(string name)
         {
             return Trips.FirstOrDefault(t => t.Name == name && t.MilesPerHour >= 5 && t.MilesPerHour <= 100);
+        }
+
+        public void DeleteAll()
+        {
+            Trips = new List<Trip>();
         }
 
         public IEnumerable<Trip> GetByName(string name)

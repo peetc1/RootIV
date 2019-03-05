@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TripTracker.Logic\TripTracker.Logic.csproj" />
+    <ProjectReference Include="..\TripTracker.Ninject\TripTracker.Ninject.csproj" />
   </ItemGroup>
 
 </Project>

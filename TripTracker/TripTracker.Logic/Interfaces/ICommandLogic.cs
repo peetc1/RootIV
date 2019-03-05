@@ -8,5 +8,6 @@ namespace TripTracker.Logic.Interfaces
     public interface ICommandLogic
     {
         List<Driver> Parse(string[] commands);
+        void ClearData();
     }
 }
