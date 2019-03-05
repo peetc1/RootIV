@@ -10,7 +10,7 @@ namespace TripTracker.Logic
     public class DriverLogic : IDriverLogic
     {
         // theorertical database using repository pattern
-        private List<Driver> Drivers { get; set; }
+        private List<Driver> Drivers { get; }
 
         public DriverLogic()
         {

@@ -9,8 +9,6 @@ namespace TripTracker.Console
 {
     class Program
     {
-
-
         static void Main(string[] args)
         {
             IKernel kernal = new StandardKernel(new TripTrackerModule());
@@ -24,7 +22,6 @@ namespace TripTracker.Console
 
             var result = FileParser.Parse(args[0]);
             System.Console.WriteLine($"File read {(result.Success ? "successfully" : "failed")}");
-            System.Console.WriteLine(result.Message);
             System.Console.WriteLine($"{Environment.NewLine}{Environment.NewLine}");
             if (result.Success)
             {
@@ -33,6 +30,10 @@ namespace TripTracker.Console
                 {
                     System.Console.WriteLine(driver.ToString());
                 }
+            }
+            else
+            {
+                System.Console.WriteLine(result.Message);
             }
             System.Console.ReadLine();
         }
