@@ -9,8 +9,4 @@
     <PackageReference Include="Ninject.Extensions.Conventions" Version="3.3.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\TripTracker.Data\TripTracker.Data.csproj" />
-  </ItemGroup>
-
 </Project>
