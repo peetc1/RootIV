@@ -10,8 +10,8 @@ namespace TripTracker.Logic
 {
     public class CommandLogic : ICommandLogic
     {
-        private Regex driverRegex = new Regex(@"(Driver)\s{1}(?<name>\w+)", RegexOptions.Compiled);
-        private Regex tripRegex = new Regex(@"(Trip)\s{1}(?<name>\w+)\s{1}(?<startTime>\d{2}\:\d{2})\s{1}(?<endTime>\d{2}\:\d{2})\s{1}(?<distance>\d+\.{1}\d+)", RegexOptions.Compiled);
+        private readonly Regex _driverRegex = new Regex(@"(Driver)\s{1}(?<name>\w+)", RegexOptions.Compiled);
+        private readonly Regex _tripRegex = new Regex(@"(Trip)\s{1}(?<name>\w+)\s{1}(?<startTime>\d{2}\:\d{2})\s{1}(?<endTime>\d{2}\:\d{2})\s{1}(?<distance>\d+\.{1}\d+)", RegexOptions.Compiled);
 
         private readonly IDriverLogic _driverLogic;
         private readonly ITripLogic _tripLogic;
@@ -54,18 +54,18 @@ namespace TripTracker.Logic
         {
             var person = default(IPerson);
 
-            if (driverRegex.IsMatch(command))
+            if (_driverRegex.IsMatch(command))
             {
-                var driver = driverRegex.Match(command);
+                var driver = _driverRegex.Match(command);
                 person = new Driver
                 {
                     Name = driver.Groups["name"].Value
                 };
             }
 
-            if (tripRegex.IsMatch(command))
+            if (_tripRegex.IsMatch(command))
             {
-                var trip = tripRegex.Match(command);
+                var trip = _tripRegex.Match(command);
                 person = new Trip
                 {
                     Name = trip.Groups["name"].Value,
