@@ -4,8 +4,9 @@ using System.Text;
 
 namespace TripTracker.Logic.BusinessObjects
 {
-    public class CommandType
+    public static class CommandType
     {
-
+        public static string Driver => "Driver";
+        public static string Trip => "Trip";
     }
 }

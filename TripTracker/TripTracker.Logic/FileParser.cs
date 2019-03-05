@@ -13,7 +13,7 @@ namespace TripTracker.Logic
             var response = new FileCommandResponse();
             try
             {
-                response.Lines = Get(path);
+                response.Lines = File.ReadAllLines(path);
                 response.Success = true;
             }
             catch (Exception ex) when (ex is ArgumentException ||
@@ -29,11 +29,6 @@ namespace TripTracker.Logic
             }
 
             return response;
-        }
-
-        private static string[] Get(string path)
-        {
-            return File.ReadAllLines(path);
         }
     }
 }

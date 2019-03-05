@@ -6,6 +6,7 @@ namespace TripTracker.Logic.Interfaces
 {
     public interface ITrip
     {
+        string Name { get; set; }
         TimeSpan StartTime { get; set; }
         TimeSpan EndTime { get; set; }
         decimal Distance { get; set; }

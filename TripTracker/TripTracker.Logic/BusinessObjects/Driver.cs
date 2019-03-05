@@ -5,8 +5,14 @@ using TripTracker.Logic.Interfaces;
 
 namespace TripTracker.Logic.BusinessObjects
 {
-    public class Person : IPerson
+    public class Driver : IPerson
     {
+        public Driver()
+        {
+            Trips = new List<ITrip>();
+        }
+
         public string Name { get; set; }
+        public List<ITrip> Trips { get; set; }
     }
 }

@@ -6,6 +6,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Test.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Test.txt">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Ninject.Extensions.Conventions" Version="3.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\TripTracker.Logic\TripTracker.Logic.csproj" />
   </ItemGroup>
 

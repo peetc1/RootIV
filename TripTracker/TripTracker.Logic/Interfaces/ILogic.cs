@@ -4,9 +4,9 @@ using System.Text;
 
 namespace TripTracker.Logic.Interfaces
 {
-    public interface ILogic<in T>
+    public interface ILogic<T>
     {
         void Add(T obj);
-
+        T Get(string name);
     }
 }
