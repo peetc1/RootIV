@@ -6,7 +6,7 @@ namespace TripTracker.Logic.Interfaces
 {
     public interface ILogic<T>
     {
-        void Add(T obj);
+        void Save(T obj);
         T Get(string name);
     }
 }

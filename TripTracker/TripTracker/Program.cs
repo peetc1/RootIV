@@ -1,14 +1,21 @@
 ﻿using System;
 using System.Linq;
+using Ninject;
 using TripTracker.Logic;
+using TripTracker.Logic.Interfaces;
+using TripTracker.Ninject;
 
 namespace TripTracker.Console
 {
     class Program
     {
+
+
         static void Main(string[] args)
         {
-
+            IKernel kernal = new StandardKernel(new TripTrackerModule());
+            var commandLogic = kernal.Get<ICommandLogic>();
+            System.Console.ReadKey();
             if (args == null || !args.Any() || args.Length != 1)
             {
                 System.Console.WriteLine("No valid parameters supplied. Press Enter to exit");
@@ -22,9 +29,10 @@ namespace TripTracker.Console
             System.Console.WriteLine($"{Environment.NewLine}{Environment.NewLine}");
             if (result.Success)
             {
-                foreach (var line in result.Lines)
+                var drivers = commandLogic.Parse(result.Lines).OrderByDescending(x => x.TotalDistance);
+                foreach (var driver in drivers)
                 {
-                    System.Console.WriteLine(line);
+                    System.Console.WriteLine(driver.ToString());
                 }
             }
             System.Console.ReadLine();

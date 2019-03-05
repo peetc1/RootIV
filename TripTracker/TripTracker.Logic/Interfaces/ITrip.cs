@@ -4,11 +4,11 @@ using System.Text;
 
 namespace TripTracker.Logic.Interfaces
 {
-    public interface ITrip
+    public interface ITrip : IPerson
     {
-        string Name { get; set; }
         TimeSpan StartTime { get; set; }
         TimeSpan EndTime { get; set; }
         decimal Distance { get; set; }
+        decimal MilesPerHour { get; }
     }
 }

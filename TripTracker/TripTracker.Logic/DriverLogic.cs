@@ -7,8 +7,9 @@ using TripTracker.Logic.Interfaces;
 
 namespace TripTracker.Logic
 {
-    public class DriverLogic : ILogic<Driver>
+    public class DriverLogic : IDriverLogic
     {
+        // theorertical database using repository pattern
         private List<Driver> Drivers { get; set; }
 
         public DriverLogic()
@@ -16,9 +17,17 @@ namespace TripTracker.Logic
             Drivers = new List<Driver>();
         }
 
-        public void Add(Driver obj)
+        public void Save(Driver obj)
         {
-            Drivers.Add(obj);
+            if (Drivers.All(d => d.Name != obj.Name))
+            {
+                Drivers.Add(obj);
+            }
+            else
+            {
+               // theorectical update
+               Drivers.Replace(x => x.Name == obj.Name, obj);
+            }
         }
 
         public Driver Get(string name)
@@ -26,9 +35,9 @@ namespace TripTracker.Logic
             return Drivers.FirstOrDefault(d => d.Name == name);
         }
 
-        public IEnumerable<Driver> GetAll(string name)
+        public IEnumerable<Driver> GetAll()
         {
-            throw new NotImplementedException();
+            return Drivers;
         }
     }
 }

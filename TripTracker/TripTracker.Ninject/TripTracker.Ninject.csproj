@@ -5,12 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Ninject" Version="3.3.4" />
     <PackageReference Include="Ninject.Extensions.Conventions" Version="3.3.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TripTracker.Data\TripTracker.Data.csproj" />
+    <ProjectReference Include="..\TripTracker.Logic\TripTracker.Logic.csproj" />
   </ItemGroup>
 
 </Project>

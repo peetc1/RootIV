@@ -7,8 +7,9 @@ using TripTracker.Logic.Interfaces;
 
 namespace TripTracker.Logic
 {
-    public class TripLogic : ILogic<Trip>
+    public class TripLogic : ITripLogic
     {
+        // theorertical database using repository pattern
         private List<Trip> Trips { get; set; }
 
         public TripLogic()
@@ -16,8 +17,9 @@ namespace TripTracker.Logic
             Trips = new List<Trip>();
         }
 
-        public void Add(Trip obj)
+        public void Save(Trip obj)
         {
+            // no checking on trips as there could be multiple
             Trips.Add(obj);
         }
 
@@ -26,7 +28,7 @@ namespace TripTracker.Logic
             return Trips.FirstOrDefault(d => d.Name == name);
         }
 
-        public IEnumerable<Trip> GetAll(string name)
+        public IEnumerable<Trip> GetByName(string name)
         {
             return Trips.Where(d => d.Name == name);
         }

@@ -7,5 +7,6 @@ namespace TripTracker.Logic.Interfaces
 {
     public interface IDriverLogic : ILogic<Driver>
     {
+        IEnumerable<Driver> GetAll();
     }
 }
