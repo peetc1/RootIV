@@ -39,8 +39,11 @@ namespace TripTracker.Logic
                             break;
                     }
                 }
-                // theoretical log of error
-                Console.WriteLine($"Error loading command: <{command}>");
+                else
+                {
+                    // theoretical log of error
+                    Console.WriteLine($"Error loading command: <{command}>");
+                }
             }
 
             // we've added all trips and drivers time to combine them

@@ -15,7 +15,6 @@ namespace TripTracker.Console
         {
             IKernel kernal = new StandardKernel(new TripTrackerModule());
             var commandLogic = kernal.Get<ICommandLogic>();
-            System.Console.ReadKey();
             if (args == null || !args.Any() || args.Length != 1)
             {
                 System.Console.WriteLine("No valid parameters supplied. Press Enter to exit");

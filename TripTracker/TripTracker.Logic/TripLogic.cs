@@ -25,12 +25,12 @@ namespace TripTracker.Logic
 
         public Trip Get(string name)
         {
-            return Trips.FirstOrDefault(d => d.Name == name);
+            return Trips.FirstOrDefault(t => t.Name == name && t.MilesPerHour >= 5 && t.MilesPerHour <= 100);
         }
 
         public IEnumerable<Trip> GetByName(string name)
         {
-            return Trips.Where(d => d.Name == name);
+            return Trips.Where(t => t.Name == name && t.MilesPerHour >= 5 && t.MilesPerHour <= 100);
         }
     }
 }

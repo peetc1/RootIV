@@ -17,7 +17,7 @@ namespace TripTracker.Logic.BusinessObjects
         public List<Trip> Trips { get; set; }
 
         public decimal TotalDistance => Trips.Sum(d => d.Distance);
-        public decimal TotalHours => Trips.Where(t => t.MilesPerHour > 5 && t.MilesPerHour <= 100).Sum(x => x.Hours);
+        public decimal TotalHours => Trips.Sum(x => x.Hours);
 
 
         public override string ToString()

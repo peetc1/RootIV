@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace TripTracker.Logic.Interfaces
+﻿namespace TripTracker.Logic.Interfaces
 {
-    public interface IFileCommandResponse : ICommandResponse
+    public interface IFileCommandResponse
     {
+        bool Success { get; set; }
+        string Message { get; set; }
         string[] Lines { get; set; }
     }
 }
