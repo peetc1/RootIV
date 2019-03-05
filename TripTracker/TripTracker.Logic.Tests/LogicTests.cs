@@ -50,6 +50,24 @@ namespace TripTracker.Logic.Tests
 
             Assert.AreEqual("Alex: 42 miles @ 34 mph", driver.ToString());
         }
+
+        [Test]
+        public void MaxInvalidTrips()
+        {
+            var driver = new Driver
+            {
+                Name = "Max",
+                Trips = new List<Trip>
+                {
+                    new Trip {Distance = 57.5m, StartTime = TimeSpan.Parse("12:01"), EndTime = TimeSpan.Parse("13:16")},
+                    new Trip {Distance = 210.0m, StartTime = TimeSpan.Parse("12:01"), EndTime = TimeSpan.Parse("13:16")},
+                    new Trip {Distance = 5.0m, StartTime = TimeSpan.Parse("12:01"), EndTime = TimeSpan.Parse("13:16")},
+                    new Trip {Distance = 42.0m, StartTime = TimeSpan.Parse("12:01"), EndTime = TimeSpan.Parse("13:16")}
+                }  
+            };
+
+            Assert.AreEqual("Max: 100 miles @ 34 mph", driver.ToString());
+        }
     }
 
 }
